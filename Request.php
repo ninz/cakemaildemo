@@ -99,7 +99,7 @@ class RequestException extends Exception {
 }
 
 /**
- * A static class that takes care of handling HTTP requests
+ * A class that contains one (for now) utility method for handling HTTP requests
  *
  * @package Request
  */
@@ -117,7 +117,7 @@ class HttpRequestHandler {
      * @param string $request_string The raw HTTP request string
      * @return Request A new Request object
      */
-    function handleRequest($request_string) {
+    public static function handleRequest($request_string) {
 
         $request_headers = explode(PHP_EOL, $request_string);
         $request_line = array_shift($request_headers);
